@@ -318,7 +318,7 @@ void comp_function(const string &row){
                     break;
                 }
             if((i != -1) and (j != -1) and ok_val){
-                matrix[i][j] = value;
+                matrix[i][j] += value;
                 ok_function = true;
             }
             else{

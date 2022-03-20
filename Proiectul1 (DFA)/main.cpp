@@ -57,7 +57,7 @@ int main(int argc, char * argv[]){
             string cuv;
             cuv = j;
             for (int i = 0; i < states.size(); ++i) {
-                if (matrix[stare][i] == cuv) {
+                if (matrix[stare][i].find(j) != string::npos) {
                     stare = i;
                     ok = true;
                     break;
