@@ -1,3 +1,3 @@
-C:/Users/Madalin/Desktop/tema1/cmake-build-debug/CMakeFiles/tema1.dir
-C:/Users/Madalin/Desktop/tema1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Madalin/Desktop/tema1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)/cmake-build-debug/CMakeFiles/tema1.dir
+C:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

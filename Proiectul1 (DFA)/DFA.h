@@ -14,7 +14,6 @@ vector <vector<string>> matrix;
 int section[3];
 
 
-
 void citire_alfabet(ifstream &fin);
 void completare(const string &state);
 void citire_states(ifstream &fin);
@@ -23,8 +22,7 @@ bool Check_End(string rand);
 bool verifica();
 
 
-
-bool Check_exista_altelitere(string rand){
+bool Check_exista_altelitere(string rand) {
     bool ok1 = true;
     for (unsigned long long i = 0; i < rand.find('#') and rand[i] != '#'; ++i)
         if (rand[i] != ' ') {
@@ -34,7 +32,7 @@ bool Check_exista_altelitere(string rand){
     return ok1;
 }
 
-int verif_DFA(const string& nume){
+int verif_DFA(const string& nume) {
     ifstream fin(nume);
 
     if (!fin)
@@ -48,7 +46,7 @@ int verif_DFA(const string& nume){
             transform(line.begin(), line.end(), line.begin(), ::toupper);
             if (line.find("SIGMA") != string::npos) {
                 finish_section = false;
-                section[0]=1;
+                section[0] = 1;
                 citire_alfabet(fin);
                 if(!finish_section)
                     return 10;
@@ -64,7 +62,7 @@ int verif_DFA(const string& nume){
                     continue;
                 } else {
                     if (line.find("TRANSITIONS") != string::npos){
-                        section[2] = 1;
+                        section[2]=1;
                         if(!section[0] or !section[1])
                             return 8;
                         else {
@@ -93,8 +91,7 @@ int verif_DFA(const string& nume){
 
 
 // verifica daca suntem la final de sectiune
-bool Check_End(string rand)
-{
+bool Check_End(string rand) {
     transform(rand.begin(), rand.end(), rand.begin(), ::toupper);
     if(rand.find('#') != string::npos)
         rand = rand.substr(0,rand.find('#'));
@@ -103,8 +100,7 @@ bool Check_End(string rand)
     return false;
 }
 
-bool Check_other_section(string rand)
-{
+bool Check_other_section(string rand) {
     transform(rand.begin(), rand.end(), rand.begin(), ::toupper);
     if(rand.find("STATES") != string::npos or rand.find("TRANSITIONS") != string::npos or rand.find("SIGMA") != string::npos)
         return true;
@@ -112,9 +108,9 @@ bool Check_other_section(string rand)
 }
 
 
+
 // citeste alfabetul
-void citire_alfabet(ifstream &fin)
-{
+void citire_alfabet(ifstream &fin) {
     string cuvant;
     set<char> alfab;
     bool ok = false, ok_end = false;
@@ -157,7 +153,7 @@ void citire_alfabet(ifstream &fin)
                     ok = true;
             int count = 0;
             for(char i : cuvant)
-                if(i != ' ')
+                if(i!= ' ')
                     count ++;
             if (count == 1) {
                 for(char & i : cuvant)
@@ -182,17 +178,18 @@ void citire_alfabet(ifstream &fin)
         if(ok)
             cout<<"Alfabetul nu este corect definit deoarece se repeta cuvintele. A fost corectat.\n";
     }
-    else if (alfab.empty()) {
-        cout<<"Alfabetul este gol.";
+    else
+        if(alfab.empty()) {
+        cout<<"Alfabetul este gol.\n";
         exit(-1);
-    }
+        }
 }
 
 
 
 // completeaza cu valori corespunzatoate vectorul de states
-void completare(const string &state){
-    if(state.find(',') != string::npos){
+void completare(const string &state) {
+    if(state.find(',') != string::npos) {
         unsigned long long pos = state.find(',');
         string name, is_S_or_F;
         name = state.substr(0,pos);
@@ -204,18 +201,16 @@ void completare(const string &state){
         transform(is_S_or_F.begin(), is_S_or_F.end(),is_S_or_F.begin(), ::toupper);
         if(is_S_or_F.find('S') != string::npos and start_state == -1)
             start_state = (long long)(states.size() - 1);
-        else
-        {
+        else {
             if(is_S_or_F.find('F') != string::npos)
                 final_states.emplace_back(states.size() - 1);
-            else
-            {
+            else {
                 if(!Check_exista_altelitere(is_S_or_F))
 
-                if(is_S_or_F.find('S') != string::npos and start_state != -1){
-                    cout<<"Eroare! Automatul are mai multe stari initiale.\n";
-                    exit(-1);
-            }}
+                    if(is_S_or_F.find('S') != string::npos and start_state != -1){
+                        cout<<"Automatul are mai multe stari initiale.\n";
+                        exit(-1);
+                    }}
         }
     }
     else {
@@ -223,7 +218,7 @@ void completare(const string &state){
             unsigned long long poz1, poz2;
             poz1 = state.find(' ');
             poz2 = state.find('#');
-            string stare = state.substr(0,min(poz1, poz2));
+            string stare = state.substr(0,min(poz1,poz2));
             states.emplace_back(states.size(),stare);
         }
         else{
@@ -235,10 +230,10 @@ void completare(const string &state){
 
 
 //citeste starile date
-void citire_states(ifstream &fin){
+void citire_states(ifstream &fin) {
     string state;
     bool ok_end = false;
-    while(getline(fin,state) and !Check_End(state) and !Check_other_section(state)) {
+    while(getline(fin,state) and !Check_End(state) and !Check_other_section(state) ) {
         if (state.find('#') != string::npos or state.empty()) {
             bool ok = true;
             for (unsigned long long i = 0; i < state.find('#') and state[i] != '#'; ++i)
@@ -270,8 +265,8 @@ void citire_states(ifstream &fin){
 
 
 
-void comp_function(const string &row){
-    if(row.find(',') != string::npos){
+void comp_function(const string &row) {
+    if(row.find(',') != string::npos) {
         unsigned long long pos = row.find(',');
         string state1, value,v_state2, state2;
         state1 = row.substr(0,pos);
@@ -291,47 +286,46 @@ void comp_function(const string &row){
                 else
                     state2 = v_state2.substr(0,pos4);
             }
-            for(unsigned long long i = pos3; i < v_state2.size() and v_state2[i] !='#'; ++i)
+            for(unsigned long long i = pos3;i < v_state2.size() and v_state2[i] !='#';++i)
                 if(v_state2[i] != ' '){
-                    cout<<"Linie invalida in Transitions.\n";
+                    cout<<"Linie invalida in Transition\n";
                     exit(-1);
                 }
             bool ok_val = false;
             unsigned int i = -1, j = -1;
-            for(auto &it : states){
-                if(it.second == state1){
+            for(auto &it : states) {
+                if(it.second == state1) {
                     i = it.first;
                     break;
                 }
             }
-            for(auto &it : states){
-                if(it.second == state2){
+            for(auto &it : states) {
+                if(it.second == state2) {
                     j = it.first;
                     break;
                 }
             }
             char valoare = value[0];
             for(auto &x :alf)
-                if(x == valoare)
-                {
+                if(x == valoare) {
                     ok_val = true;
                     break;
                 }
-            if((i != -1) and (j != -1) and ok_val){
+            if((i != -1) and (j != -1) and ok_val) {
                 matrix[i][j] += value;
                 ok_function = true;
             }
-            else{
-                cout<<"Eroare! Functie gresita (stare / valoare inexistenta).\n";
+            else {
+                cout<<"Eroare! Functie gresita (Stare / valoare inexistenta).\n";
                 exit(-1);
             }
         }
-        else{
+        else {
             cout<<"Eroare! Functie incorecta.\n";
             exit(-1);
         }
     }
-    else{
+    else {
         cout<<"Eroare! Functie incorecta.\n";
         exit(-1);
     }
@@ -339,14 +333,14 @@ void comp_function(const string &row){
 
 
 
-void citire_function(ifstream &fin){
+void citire_function(ifstream &fin) {
     string function;
     ok_function = false;
     bool ok_end = false;
     while(getline(fin,function) and !Check_End(function)){
         if (function.find('#') != string::npos or function.empty()){
             bool ok= true;
-            for(unsigned long long i = 0; i < function.find('#') and function[i] != '#'; ++i)
+            for(unsigned long long i = 0;i < function.find('#') and function[i] !='#';++i)
                 if(function[i] != ' '){
                     ok = false;
                     break;
@@ -368,42 +362,29 @@ void citire_function(ifstream &fin){
 
 
 
-bool verifica(){
+bool verifica() {
     //verifica daca functia e ok
     vector<pair<string, bool>> norepeat;
     norepeat.resize(alf.size());
-    for(int i=0; i<states.size(); ++i){
-        for(int k=0; k < norepeat.size(); ++k){
+    for(int i = 0; i < states.size(); ++i) {
+        for(int k = 0; k < norepeat.size(); ++k) {
             norepeat[k].first = alf[k];
             norepeat[k].second = false;
         }
-        for(int j = 0; j<states.size(); ++j){
+        bool ok = false;
+        for(int j = 0; j < states.size(); ++j) {
+            if((matrix[i][j] != "-1") and (i != j))
+                ok = true;
             for(auto &x: norepeat)
-                if(x.first == matrix[i][j])
-                {
+                if(x.first == matrix[i][j]) {
                     if (!x.second)
                         x.second = true;
                     else
                         return false;
                 }
         }
-    }
-
-    vector<unsigned int>stari;
-    for(auto &x:states){
-        bool ok = true;
-        for(auto &i: final_states)
-            if (x.first == i)
-                ok=false;
-        if (ok)
-            stari.push_back(x.first);
-    }
-
-    for(auto &x:final_states){
-        bool ok = false;
-        for(int i = 0; i<states.size(); ++i)
-            if((i != x) and (matrix[x][i] != "-1"))
-            {
+        for(auto &x :final_states)
+            if(i == x) {
                 ok = true;
                 break;
             }
@@ -411,20 +392,17 @@ bool verifica(){
             return false;
     }
 
-    for(auto &x:stari){
+    for(auto &x:final_states) {
         bool ok = false;
-        for(int i = 0; i < stari.size(); ++i)
-            if((i != x) and ((matrix[x][i] != "-1") or (matrix[i][x] != "-1")))
-            {
+        for(int i = 0; i < states.size(); ++i)
+            if((i != x) and (matrix[i][x] != "-1")) {
                 ok = true;
                 break;
             }
         if(!ok)
             return false;
     }
-
     return true;
 }
-
 
 #endif //DFA_LIBRARY_H

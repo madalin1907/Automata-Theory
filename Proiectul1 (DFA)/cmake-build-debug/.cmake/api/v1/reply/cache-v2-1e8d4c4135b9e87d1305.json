@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Madalin/Desktop/tema1/cmake-build-debug"
+			"value" : "c:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Madalin/Desktop/tema1"
+			"value" : "C:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Madalin/Desktop/tema1/cmake-build-debug"
+			"value" : "C:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)/cmake-build-debug"
 		},
 		{
 			"name" : "tema1_IS_TOP_LEVEL",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Madalin/Desktop/tema1"
+			"value" : "C:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)"
 		}
 	],
 	"kind" : "cache",

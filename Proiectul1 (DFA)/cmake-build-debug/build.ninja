@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/Madalin/Desktop/tema1/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/Madalin/Desktop/LFA/Proiectul1$ (DFA)/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target tema1
 
@@ -49,7 +49,7 @@ cmake_ninja_workdir = C$:/Users/Madalin/Desktop/tema1/cmake-build-debug/
 
 build cmake_object_order_depends_target_tema1: phony || CMakeFiles/tema1.dir
 
-build CMakeFiles/tema1.dir/main.cpp.obj: CXX_COMPILER__tema1_Debug C$:/Users/Madalin/Desktop/tema1/main.cpp || cmake_object_order_depends_target_tema1
+build CMakeFiles/tema1.dir/main.cpp.obj: CXX_COMPILER__tema1_Debug C$:/Users/Madalin/Desktop/LFA/Proiectul1$ (DFA)/main.cpp || cmake_object_order_depends_target_tema1
   DEP_FILE = CMakeFiles\tema1.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\tema1.dir
@@ -81,7 +81,7 @@ build tema1.exe: CXX_EXECUTABLE_LINKER__tema1_Debug CMakeFiles/tema1.dir/main.cp
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\Madalin\Desktop\tema1\cmake-build-debug && "C:\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Madalin\Desktop\LFA\Proiectul1 (DFA)\cmake-build-debug" && "C:\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -92,7 +92,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\Madalin\Desktop\tema1\cmake-build-debug && "C:\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\Madalin\Desktop\tema1 -BC:\Users\Madalin\Desktop\tema1\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Madalin\Desktop\LFA\Proiectul1 (DFA)\cmake-build-debug" && "C:\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"C:\Users\Madalin\Desktop\LFA\Proiectul1 (DFA)" -B"C:\Users\Madalin\Desktop\LFA\Proiectul1 (DFA)\cmake-build-debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -110,7 +110,7 @@ build tema1: phony tema1.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Madalin/Desktop/tema1/cmake-build-debug
+# Folder: C:/Users/Madalin/Desktop/LFA/Proiectul1 (DFA)/cmake-build-debug
 
 build all: phony tema1.exe
 
