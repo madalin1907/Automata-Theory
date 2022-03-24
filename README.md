@@ -1,6 +1,4 @@
-# LFA
-
-PROIECTUL 1
+# PROIECTUL 1
 
 To rule the program, follow these steps:
 
