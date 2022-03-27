@@ -1,6 +1,6 @@
 # PROIECTUL 1
 
-To rule the program, follow these steps:
+To run the program, follow these steps:
 
 1. Open CMD.
 2. Use cd to reach the folder path.
