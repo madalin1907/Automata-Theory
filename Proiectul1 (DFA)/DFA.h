@@ -312,7 +312,10 @@ void comp_function(const string &row) {
                     break;
                 }
             if((i != -1) and (j != -1) and ok_val) {
-                matrix[i][j] += value;
+                if(matrix[i][j] == "-1")
+                    matrix[i][j] = value;
+                else
+                    matrix[i][j] += value;
                 ok_function = true;
             }
             else {
