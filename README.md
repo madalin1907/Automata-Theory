@@ -1,4 +1,4 @@
-# PROIECTUL 1
+# PROJECTS 1 (DFA) & 2 (NFA)
 
 To run the program, follow these steps:
 
