@@ -1,5 +1,5 @@
 #include "NFA.h"
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main(){/*int argc, char * argv[]){
@@ -45,49 +45,89 @@ int main(){/*int argc, char * argv[]){
         case 10:
             cout<<"Sectiunea sigma nu contine end\n";
             break;
+        default:
+            cout<<"Eroare";
+            break;
     }
     if(x==0) {
         vector<char> alf_dfa;
-        vector<pair<unsigned int, string>> states_dfa;
+        alf_dfa = alf;
+
         long long start_state_dfa = start_state;
+        vector<pair<unsigned int, string>> states_dfa;
+        queue<vector<long long>> clase_echiv;
+        vector<vector<long long>>viz;
+        int adaugat = 1;
+        clase_echiv.push({start_state});
+        viz.push_back({start_state});
+        while(!clase_echiv.empty() and adaugat > 0){
+                //  el vedem unde putem ajunge luand literele pe rand
+                vector<long long> st_plec;
+                st_plec = clase_echiv.front();
+                for (auto &lit: alf) {
+                    vector<long long> nou_cls;
+                    vector<vector<long long>> directii;
+                    directii.resize(st_plec.size());
+                    int k = 0;
+                     for (auto &g: st_plec){
+                        for(int j=0;j<states.size();++j)
+                            if (matrix[g][j].find(lit) != string::npos)
+                                directii[k].push_back(j);
+                        k++;
+                    }
+                     nou_cls = directii[0];
+                     for(int j=1;j<k;++j) {
+                         vector<long long> v3;
+                         std::set_union(nou_cls.begin(), nou_cls.end(),
+                                        directii[j].begin(), directii[j].end(),
+                                        back_inserter(v3));
+                         nou_cls=v3;
+                     }
+                    if (!nou_cls.empty()) {
+                        bool ok = true;
+                        for (auto &clas: viz)
+                            if (clas == nou_cls)
+                                ok = false;
+                        if (ok) {
+                            clase_echiv.push(nou_cls);
+                            viz.push_back(nou_cls);
+                            adaugat += 1;
+                        }
+                    }
+                }
+                clase_echiv.pop();
+                adaugat-=1;
+        }
+        for(auto&st:viz){
+            int index = -1;
+            if(st.size() == 1) {
+                for (int i = 0; i < states.size(); ++i)
+                    if (states[i].first == st[0])
+                        index = i;
+                if (index != -1)
+                    states_dfa.emplace_back(states[index].first, states[index].second);
+            }
+        }
+        unsigned long long index = states.size()+1;
+        for(auto&st:viz) {
+            if(st.size() > 1){
+                string denumire;
+                for(auto &f:st) {
+                    denumire += states[f].second;
+                    denumire += "-";
+                }
+                denumire = denumire.substr(0,denumire.size()-1);
+                states_dfa.emplace_back(index,denumire);
+                index++;
+            }
+        }
         vector<unsigned int> final_states_dfa;
+        for(auto &st:states_dfa){
+            for(auto &vst:final_states)
+                if(st.second.find(states[vst].second) != string::npos)
+                    final_states_dfa.push_back(st.first);
+        }
         vector<vector<string>> matrix_dfa;
-        unsigned long long int stare = start_state;
-        queue<vector<unsigned long long>> drumuri;
-        vector<pair<vector<unsigned long long>, unsigned long long>> stari_noi;
-        drumuri.push({stare});
-        unsigned long long k = states.size();
-        states_dfa.emplace_back(start_state,states[start_state].second);
-        while (!drumuri.empty()) {
-            vector<unsigned long long> drum;
-            drum = drumuri.front();
-            drumuri.pop();
-            int n = drum[drum.size() - 1];
-            for (long long i = 0; i < alf.size(); ++i) {
-                for (long long j = 0; j < states.size(); ++j)
-                    if (matrix[n][j].find(alf[0]) != string::npos and i!=j)
-                        drum.push_back(j);
-            }
-            drumuri.push(drum);
-            stari_noi.emplace_back(drum, k++);
-        }
-        vector<pair<unsigned long long, bool>> stari_nec;
-        stari_nec.resize(states.size());
-        for (auto &i: stari_nec)
-            i.second = false;
-        for (auto &d: stari_noi)
-            for (auto &u: d.first)
-                stari_nec[u].second = true;
-        for (auto &i: stari_nec)
-            if (!i.second)
-                states_dfa.emplace_back(i.first,states[i.first].second);
-        for (auto &d: stari_noi) {
-            string sec;
-            for (auto &u: d.first) {
-                    sec += states[u].second;
-            }
-            states_dfa.emplace_back(d.second,sec);
-        }
         cout<<"Sigma: \n";
         for (auto &i : alf_dfa){
             cout<<i<<"\n";
@@ -95,9 +135,22 @@ int main(){/*int argc, char * argv[]){
         cout<<"END\n";
 
         cout<<"States: \n";
-        for (auto &i : states_dfa){
-            cout<<i.second<<"\n";
-        }
+        for (auto &i : states_dfa)
+            if(i.first == start_state_dfa)
+                cout<< i.second << ",S\n";
+            else {
+                bool ok = true;
+                for (auto &st:final_states_dfa)
+                        if(i.first == st) {
+                            ok = false;
+                            break;
+                        }
+                if(ok)
+                    cout << i.second << "\n";
+                else
+                    cout<<i.second <<",F\n";
+            }
+
         cout<<"END\n";
 
         cout<<"Transitions: \n";
