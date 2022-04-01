@@ -22,7 +22,7 @@ int main(int argc, char * argv[]){
             cout << "Nu s-a gasit/introdus corect linia Sigma.\n";
             break;
         case 3:
-            cout<< "Nu s-a gasit/introdus corect linia States.\n";
+            cout << "Nu s-a gasit/introdus corect linia States.\n";
             break;
         case 4:
             cout << "Nu s-a gasit/introdus corect linia Transitions.\n";

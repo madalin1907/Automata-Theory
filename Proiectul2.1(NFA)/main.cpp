@@ -14,7 +14,7 @@ int main(){/*int argc, char * argv[]){
     int x = verif_NFA(nume);
     switch(x){
         case 0:
-            cout<<"Automat Validat\n";
+            cout << "Automat Validat\n";
             break;
         case 1:
             cout << "Bad filename '" ;/*<< argv[argc-2] << "'\n";*/
@@ -23,44 +23,44 @@ int main(){/*int argc, char * argv[]){
             cout << "Nu s-a gasit/introdus corect linia Sigma.\n";
             break;
         case 3:
-            cout<<"Nu s-a gasit/introdus corect linia States.\n";
+            cout << "Nu s-a gasit/introdus corect linia States.\n";
             break;
         case 4:
-            cout<<"Nu s-a gasit/introdus corect linia Transitions.\n";
+            cout << "Nu s-a gasit/introdus corect linia Transitions.\n";
             break;
         case 5:
-            cout <<"Linie invalida in fisier.\n";
+            cout << "Linie invalida in fisier.\n";
             break;
         case 6:
-            cout<<"Sectiunea transition nu contine end\n";
+            cout << "Sectiunea transition nu contine end\n";
             break;
         case 7:
-            cout<<"Sectiunea states nu contine end\n";
+            cout << "Sectiunea states nu contine end\n";
             break;
         case 8:
-            cout<<"Introduceti Sates si Sigma inainte de Transitions\n";
+            cout << "Introduceti Sates si Sigma inainte de Transitions\n";
             break;
         case 9:
-            cout<<"Date incorecte/automat definit gresit\n";
+            cout << "Date incorecte/automat definit gresit\n";
             break;
         case 10:
-            cout<<"Sectiunea sigma nu contine end\n";
+            cout << "Sectiunea sigma nu contine end\n";
             break;
     }
     if(x==0) {
         string c = "aaaaaaaaabba"; //argv[argc - 1];
         unsigned long long int stare = start_state;
-        queue<vector<unsigned long long>>drumuri;
+        queue <vector <unsigned long long> > drumuri;
         int k = c.size();
         drumuri.push({stare});
         while(!drumuri.empty() and !c.empty()){
-            vector<unsigned long long> drum;
+            vector <unsigned long long> drum;
             drum = drumuri.front();
             char j = c[0];
             c = c.substr(1,c.size());
             while(drumuri.front().size() ==  k - c.size()) {
                 drum = drumuri.front();
-                unsigned long long n =drum[drum.size()-1];
+                unsigned long long n = drum[drum.size()-1];
                 for (unsigned long long i = 0; i < states.size(); ++i)
                     if (matrix[n][i].find(j) != string::npos) {
                         drum.push_back(i);
@@ -71,20 +71,20 @@ int main(){/*int argc, char * argv[]){
             }
         }
         if(drumuri.empty()){
-            cout<<"Cuvant invalid\n";
+            cout << "Cuvant invalid\n";
             return 0;
         }
         for(int i =0 ;i<drumuri.size();++i) {
             vector<unsigned long long> drum;
             drum = drumuri.front();
             drumuri.pop();
-            for(auto &ti:final_states)
+            for(auto &ti: final_states)
                 if(drum[drum.size()-1] == ti) {
                     cout << "Cuvant valid";
                     return 0;
                 }
         }
-        cout<<"cuvant invalid";
+        cout << "Cuvant invalid";
     }
     return 0;
 }

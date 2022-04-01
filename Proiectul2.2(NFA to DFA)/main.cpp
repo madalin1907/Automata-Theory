@@ -13,7 +13,7 @@ int main(){/*int argc, char * argv[]){
     int x = verif_NFA(nume);
     switch(x){
         case 0:
-            cout<<"Automat Validat\n";
+            cout<<"Automat Validat\n\n";
             break;
         case 1:
             cout << "Bad filename '" ;/*<< argv[argc-2] << "'\n";*/
@@ -150,7 +150,6 @@ int main(){/*int argc, char * argv[]){
                 else
                     cout<<i.second <<",F\n";
             }
-
         cout<<"END\n";
 
         cout<<"Transitions: \n";

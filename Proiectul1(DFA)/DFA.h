@@ -4,7 +4,6 @@
 using namespace std;
 
 
-
 vector <char> alf;
 vector <pair<unsigned int, string>> states;
 long long start_state = -1;
@@ -14,12 +13,14 @@ vector <vector<string>> matrix;
 int section[3];
 
 
+
 void citire_alfabet(ifstream &fin);
 void completare(const string &state);
 void citire_states(ifstream &fin);
 void citire_function(ifstream &fin);
 bool Check_End(string rand);
 bool verifica();
+
 
 
 bool Check_exista_altelitere(string rand) {
@@ -31,6 +32,8 @@ bool Check_exista_altelitere(string rand) {
         }
     return ok1;
 }
+
+
 
 int verif_DFA(const string& nume) {
     ifstream fin(nume);
@@ -60,9 +63,10 @@ int verif_DFA(const string& nume) {
                     if(!finish_section)
                         return 7;
                     continue;
-                } else {
+                }
+                else {
                     if (line.find("TRANSITIONS") != string::npos){
-                        section[2]=1;
+                        section[2] = 1;
                         if(!section[0] or !section[1])
                             return 8;
                         else {
@@ -81,13 +85,14 @@ int verif_DFA(const string& nume) {
             }
         }
     }
-    for(int i = 0; i <= 2 ; ++i)
+    for(int i = 0; i <= 2; ++i)
         if(section[i] == 0)
             return i+2;
     if(!verifica())
         return 9;
     return 0;
 }
+
 
 
 // verifica daca suntem la final de sectiune
@@ -99,6 +104,8 @@ bool Check_End(string rand) {
         return true;
     return false;
 }
+
+
 
 bool Check_other_section(string rand) {
     transform(rand.begin(), rand.end(), rand.begin(), ::toupper);
@@ -112,7 +119,7 @@ bool Check_other_section(string rand) {
 // citeste alfabetul
 void citire_alfabet(ifstream &fin) {
     string cuvant;
-    set<char> alfab;
+    set <char> alfab;
     bool ok = false, ok_end = false;
     while(getline(fin,cuvant) and !Check_End(cuvant) and !Check_other_section(cuvant)) {
         if (cuvant.find('#') != string::npos or cuvant.empty()) {
@@ -152,11 +159,11 @@ void citire_alfabet(ifstream &fin) {
                 if (x == cuvant[0] and cuvant[0] != ' ')
                     ok = true;
             int count = 0;
-            for(char i : cuvant)
+            for (char i : cuvant)
                 if(i!= ' ')
                     count ++;
             if (count == 1) {
-                for(char & i : cuvant)
+                for (char & i : cuvant)
                     if (i != ' ') {
                         alfab.insert(i);
                         break;
@@ -279,14 +286,14 @@ void comp_function(const string &row) {
             unsigned long long pos3 = v_state2.find(' ');
             unsigned long long pos4 = v_state2.find('#');
             if(pos3 != string::npos and pos4 != string::npos)
-                state2 = v_state2.substr(0,min(pos3,pos4));
+                state2 = v_state2.substr(0,min(pos3, pos4));
             else {
                 if(pos3 != string::npos)
                     state2 = v_state2.substr(0,pos3);
                 else
                     state2 = v_state2.substr(0,pos4);
             }
-            for(unsigned long long i = pos3;i < v_state2.size() and v_state2[i] !='#';++i)
+            for(unsigned long long i = pos3; i < v_state2.size() and v_state2[i] != '#'; ++i)
                 if(v_state2[i] != ' '){
                     cout<<"Linie invalida in Transition\n";
                     exit(-1);
@@ -306,7 +313,7 @@ void comp_function(const string &row) {
                 }
             }
             char valoare = value[0];
-            for(auto &x :alf)
+            for(auto &x : alf)
                 if(x == valoare) {
                     ok_val = true;
                     break;
@@ -343,7 +350,7 @@ void citire_function(ifstream &fin) {
     while(getline(fin,function) and !Check_End(function)){
         if (function.find('#') != string::npos or function.empty()){
             bool ok= true;
-            for(unsigned long long i = 0;i < function.find('#') and function[i] !='#';++i)
+            for(unsigned long long i = 0; i < function.find('#') and function[i] != '#'; ++i)
                 if(function[i] != ' '){
                     ok = false;
                     break;
@@ -364,10 +371,9 @@ void citire_function(ifstream &fin) {
 
 
 
-
+//verifica daca functia e ok
 bool verifica() {
-    //verifica daca functia e ok
-    vector<pair<string, bool>> norepeat;
+    vector <pair<string, bool>> norepeat;
     norepeat.resize(alf.size());
     for(int i = 0; i < states.size(); ++i) {
         for(int k = 0; k < norepeat.size(); ++k) {
@@ -378,7 +384,7 @@ bool verifica() {
         for(int j = 0; j < states.size(); ++j) {
             if((matrix[i][j] != "-1") and (i != j))
                 ok = true;
-            for(auto &x: norepeat)
+            for(auto &x : norepeat)
                 if(x.first == matrix[i][j]) {
                     if (!x.second)
                         x.second = true;
