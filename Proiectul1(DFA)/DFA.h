@@ -382,7 +382,7 @@ bool verifica() {
         }
         bool ok = false;
         for(int j = 0; j < states.size(); ++j) {
-            if((matrix[i][j] != "-1") and (i != j))
+            if((matrix[j][i] != "-1") and (i != j))
                 ok = true;
             for(auto &x : norepeat)
                 if(x.first == matrix[i][j]) {
