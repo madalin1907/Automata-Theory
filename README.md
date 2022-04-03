@@ -7,7 +7,7 @@ To run the program, follow these steps:
 3. Use command "g++ main.cpp -o main.exe".
 4. Use command "main.exe \<input file name\> \<word to verify\>".
 
-# PROJECTS 2.2 (NFA to DFA conversion)
+# PROJECT 2.2 (NFA to DFA conversion)
 
 To run the program, follow these steps:
 
