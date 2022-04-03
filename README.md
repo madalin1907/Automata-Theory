@@ -1,4 +1,4 @@
-# PROJECTS 1 & 2.1 (DFA / NFA acceptance)
+# PROJECTS 1 & 2.1 (validation + acceptance for DFA & NFA)
 
 To run the program, follow these steps:
 
