@@ -1,0 +1,25 @@
+#
+# comment line
+#
+Sigma:#
+#
+0#mat
+1      #de facut
+End
+#
+# comment
+#
+States:
+q0,S
+q1#fd
+q2,F   #sf
+End
+Transitions:
+q0,0,q0
+q0,1,q1
+q0,1,q0
+q1,1,q2
+q2,0,q2
+q2,1,q2
+End
+#da
