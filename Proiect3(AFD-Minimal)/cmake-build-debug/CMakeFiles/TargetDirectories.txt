@@ -1,3 +1,0 @@
-C:/Users/Katherine/Desktop/tema3/cmake-build-debug/CMakeFiles/tema1.dir
-C:/Users/Katherine/Desktop/tema3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Katherine/Desktop/tema3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
