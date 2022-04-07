@@ -1,0 +1,4 @@
+C:/Users/Madalin/Desktop/LFA/Proiectul2.1 (NFA)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Madalin/Desktop/LFA/Proiectul2.1 (NFA)/cmake-build-debug/CMakeFiles/nfa_acceptance_engine.dir
+C:/Users/Madalin/Desktop/LFA/Proiectul2.1 (NFA)/cmake-build-debug/CMakeFiles/nfa_parser_engine.dir
+C:/Users/Madalin/Desktop/LFA/Proiectul2.1 (NFA)/cmake-build-debug/CMakeFiles/edit_cache.dir

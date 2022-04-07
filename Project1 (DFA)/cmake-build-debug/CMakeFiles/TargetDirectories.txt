@@ -1,0 +1,4 @@
+C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/CMakeFiles/dfa_acceptance_engine.dir
+C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/CMakeFiles/dfa_parser_engine.dir
+C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

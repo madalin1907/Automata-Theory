@@ -1,0 +1,3 @@
+C:/Users/Madalin/Desktop/LFA/Project2.2 (NFA to DFA)/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Madalin/Desktop/LFA/Project2.2 (NFA to DFA)/cmake-build-debug/CMakeFiles/nfa_conversion_engine.dir
+C:/Users/Madalin/Desktop/LFA/Project2.2 (NFA to DFA)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

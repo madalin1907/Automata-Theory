@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="tema1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dfa_acceptance_engine">
+				<Option output="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/dfa_acceptance_engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 dfa_acceptance_engine"/>
+					<CompileFile command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dfa_acceptance_engine/fast">
+				<Option output="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/dfa_acceptance_engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 dfa_acceptance_engine/fast"/>
+					<CompileFile command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dfa_parser_engine">
+				<Option output="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/dfa_parser_engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 dfa_parser_engine"/>
+					<CompileFile command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dfa_parser_engine/fast">
+				<Option output="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/dfa_parser_engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 dfa_parser_engine/fast"/>
+					<CompileFile command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/DFA.h">
+			<Option target="dfa_acceptance_engine"/>
+			<Option target="dfa_parser_engine"/>
+		</Unit>
+		<Unit filename="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/dfa_acceptance_engine.cpp">
+			<Option target="dfa_acceptance_engine"/>
+		</Unit>
+		<Unit filename="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/dfa_parser_engine.cpp">
+			<Option target="dfa_parser_engine"/>
+		</Unit>
+		<Unit filename="C:/Users/Madalin/Desktop/LFA/Project1 (DFA)/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
