@@ -1,6 +1,6 @@
 #ifndef AFD_LIBRARY_H
 #define AFD_LIBRARY_H
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 

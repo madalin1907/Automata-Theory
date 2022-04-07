@@ -9,7 +9,7 @@ int main(){/*int argc, char * argv[]){
         return -1;
     }*/
 
-    string nume = "cu.in";//argv[argc-2];
+    string nume = "test1.in";//argv[argc-2];
     int x = verif_AFD(nume);
     switch(x){
         case 0:
