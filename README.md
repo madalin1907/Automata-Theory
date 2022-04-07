@@ -1,6 +1,6 @@
 # PROJECT 1 (DFA validation & acceptance)
 
-## DFA input file validation
+### DFA input file validation
 
 To run the program, follow these steps:
 
