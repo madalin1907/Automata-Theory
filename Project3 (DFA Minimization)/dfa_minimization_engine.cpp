@@ -16,7 +16,7 @@ int main(int argc, char * argv[]){
             cout << "AFD valid\n";
             break;
         case 1:
-            cout << "Bad filename '";/* << argv[argc-2] << "'\n";*/
+            cout << "Bad filename '" << argv[argc-2] << "'\n";
             break;
         case 2:
             cout << "Nu s-a gasit/introdus corect linia Sigma.\n";
@@ -167,7 +167,7 @@ int main(int argc, char * argv[]){
                 for(auto &f : st) {
                     if(start_state == f and start_state_afd_min == -1)
                         start_state_afd_min = index;
-                    if(!ok_fin and find(final_states.begin(), final_states.end(), f) != final_states.end()){
+                    if(!ok_fin and find(final_states.begin(), final_states.end(), index) != final_states.end()){
                         ok_fin = true;
                         final_states_afd.push_back(index);
                     }
@@ -179,7 +179,7 @@ int main(int argc, char * argv[]){
                 for(auto &f:nextst) {
                     if(start_state == f and start_state_afd_min == -1)
                         start_state_afd_min = index;
-                    if(!ok_fin and find(final_states.begin(), final_states.end(), f) != final_states.end()){
+                    if(!ok_fin and find(final_states.begin(), final_states.end(), index) != final_states.end()){
                         ok_fin = true;
                         final_states_afd.push_back(index);
                     }
