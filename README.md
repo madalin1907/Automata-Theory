@@ -60,3 +60,13 @@ To run the program, follow these steps:
 2. Use *cd* to reach the **Project3 (DFA Minimization)** folder path.
 3. Use command "g++ dfa_minimization_engine.cpp -o dfa_minimization_engine.exe".
 4. Use command "dfa_minimization_engine.exe \<input file name\>".
+
+
+## Minimization to the smallest (potentially) incomplete DFA (Myhill-Nerode theorem + dead states elimination)
+
+To run the program, follow these steps:
+
+1. Open CMD.
+2. Use *cd* to reach the **Project3 (DFA Minimization)** folder path.
+3. Use command "g++ adv_dfa_minimization_engine.cpp -o adv_dfa_minimization_engine.exe".
+4. Use command "adv_dfa_minimization_engine.exe \<input file name\>".

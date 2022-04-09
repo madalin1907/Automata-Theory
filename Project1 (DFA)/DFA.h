@@ -379,17 +379,15 @@ bool verifica() {
         }
         bool ok = false;
         for(int j = 0; j < states.size(); ++j) {
-            if(((!matrix[j][i].empty()) and (i != j)) or  i == start_state)
-                ok = true;
             for(auto &x : norepeat)
-                if(x.first == matrix[i][j]) {
+                if(matrix[i][j].find(x.first)!= string::npos) {
                     if (!x.second)
                         x.second = true;
                     else
                         return false;
                 }
         }
-        for(auto &x :final_states)
+        for(auto &x : final_states)
             if(i == x) {
                 ok = true;
                 break;
@@ -398,7 +396,7 @@ bool verifica() {
             return false;
     }
 
-    for(auto &x:final_states) {
+    for(auto &x : final_states) {
         bool ok = false;
         for(int i = 0; i < states.size(); ++i)
             if((i != x) and (!matrix[i][x].empty())) {
