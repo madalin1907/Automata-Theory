@@ -1,3 +1,4 @@
 C:/Users/Madalin/Desktop/LFA/Project3 (DFA Minimization)/cmake-build-debug/CMakeFiles/dfa_minimization_engine.dir
+C:/Users/Madalin/Desktop/LFA/Project3 (DFA Minimization)/cmake-build-debug/CMakeFiles/adv_dfa_minimization_engine.dir
 C:/Users/Madalin/Desktop/LFA/Project3 (DFA Minimization)/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Madalin/Desktop/LFA/Project3 (DFA Minimization)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

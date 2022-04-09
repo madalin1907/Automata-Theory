@@ -73,6 +73,39 @@ build dfa_minimization_engine.exe: CXX_EXECUTABLE_LINKER__dfa_minimization_engin
   TARGET_IMPLIB = libdfa_minimization_engine.dll.a
   TARGET_PDB = dfa_minimization_engine.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target adv_dfa_minimization_engine
+
+
+#############################################
+# Order-only phony target for adv_dfa_minimization_engine
+
+build cmake_object_order_depends_target_adv_dfa_minimization_engine: phony || CMakeFiles/adv_dfa_minimization_engine.dir
+
+build CMakeFiles/adv_dfa_minimization_engine.dir/adv_dfa_minimization_engine.cpp.obj: CXX_COMPILER__adv_dfa_minimization_engine_Debug C$:/Users/Madalin/Desktop/LFA/Project3$ (DFA$ Minimization)/adv_dfa_minimization_engine.cpp || cmake_object_order_depends_target_adv_dfa_minimization_engine
+  DEP_FILE = CMakeFiles\adv_dfa_minimization_engine.dir\adv_dfa_minimization_engine.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\adv_dfa_minimization_engine.dir
+  OBJECT_FILE_DIR = CMakeFiles\adv_dfa_minimization_engine.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target adv_dfa_minimization_engine
+
+
+#############################################
+# Link the executable adv_dfa_minimization_engine.exe
+
+build adv_dfa_minimization_engine.exe: CXX_EXECUTABLE_LINKER__adv_dfa_minimization_engine_Debug CMakeFiles/adv_dfa_minimization_engine.dir/adv_dfa_minimization_engine.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\adv_dfa_minimization_engine.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = adv_dfa_minimization_engine.exe
+  TARGET_IMPLIB = libadv_dfa_minimization_engine.dll.a
+  TARGET_PDB = adv_dfa_minimization_engine.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -99,6 +132,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build adv_dfa_minimization_engine: phony adv_dfa_minimization_engine.exe
+
 build dfa_minimization_engine: phony dfa_minimization_engine.exe
 
 # =============================================================================
@@ -109,7 +144,7 @@ build dfa_minimization_engine: phony dfa_minimization_engine.exe
 #############################################
 # Folder: C:/Users/Madalin/Desktop/LFA/Project3 (DFA Minimization)/cmake-build-debug
 
-build all: phony dfa_minimization_engine.exe
+build all: phony dfa_minimization_engine.exe adv_dfa_minimization_engine.exe
 
 # =============================================================================
 # Built-in targets

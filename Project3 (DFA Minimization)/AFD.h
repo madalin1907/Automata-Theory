@@ -382,9 +382,11 @@ bool verifica() {
             if(((!matrix[j][i].empty()) and (i != j)) or  i == start_state)
                 ok = true;
             for(auto &x : norepeat)
-                if(x.first == matrix[i][j]) {
-                    if (!x.second)
+                if(matrix[i][j].find(x.first)!= string::npos) {
+                    if (!x.second) {
                         x.second = true;
+                        ok=true;
+                    }
                     else
                         return false;
                 }

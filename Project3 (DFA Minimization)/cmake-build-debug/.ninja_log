@@ -1,24 +1,5 @@
 # ninja log v5
 4	2390	6710443367921925	CMakeFiles/tema1.dir/main.cpp.obj	4b15da481ce9130
-2391	3076	6710443374737833	tema1.exe	246e123043ae92d2
-1	291	6710770302125975	build.ninja	bcf8bc36e3c9b924
-1	1825	6710764299982926	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-1826	2192	6710764303655200	dfa_minimization_engine.exe	96f8f17add84c481
-2	1853	6710771292913614	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-1853	2196	6710771296362079	dfa_minimization_engine.exe	96f8f17add84c481
-2	2122	6710775889825996	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-2122	2498	6710775893603359	dfa_minimization_engine.exe	96f8f17add84c481
-2	3007	6711459950557579	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-3007	3751	6711459958017246	dfa_minimization_engine.exe	96f8f17add84c481
-2	2853	6711461864087677	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-2854	3295	6711461868498981	dfa_minimization_engine.exe	96f8f17add84c481
-2	1798	6711463290751203	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-1799	2146	6711463294234943	dfa_minimization_engine.exe	96f8f17add84c481
-2	1807	6711465102356310	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-1807	2147	6711465105754559	dfa_minimization_engine.exe	96f8f17add84c481
-2	2217	6711485714736678	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-2217	2597	6711485718545806	dfa_minimization_engine.exe	96f8f17add84c481
-3	2186	6711485918915697	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-2186	2594	6711485922991048	dfa_minimization_engine.exe	96f8f17add84c481
-1	1606	6711505888783727	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
-1606	1950	6711505892227443	dfa_minimization_engine.exe	96f8f17add84c481
+1	291	6711978929270731	build.ninja	bcf8bc36e3c9b924
+2	1780	6711971480620407	CMakeFiles/dfa_minimization_engine.dir/dfa_minimization_engine.cpp.obj	f1c7725a51245dfe
+1780	2300	6711971485828733	dfa_minimization_engine.exe	96f8f17add84c481
