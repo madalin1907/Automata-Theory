@@ -7,7 +7,7 @@ To run the program, follow these steps:
 1. Open CMD.
 2. Use *cd* to reach the **Project1 (DFA)** folder path.
 3. Use command "g++ dfa_parser_engine.cpp -o dfa_parser_engine.exe".
-4. Use command "dfa_parser_engine.exe \<input file name\> \<word to verify\>".
+4. Use command "dfa_parser_engine.exe \<input file name\>".
 
 ## DFA input file validation + word acceptance
 
@@ -28,7 +28,7 @@ To run the program, follow these steps:
 1. Open CMD.
 2. Use *cd* to reach the **Project2.1 (NFA)** folder path.
 3. Use command "g++ nfa_parser_engine.cpp -o nfa_parser_engine.exe".
-4. Use command "nfa_parser_engine.exe \<input file name\> \<word to verify\>".
+4. Use command "nfa_parser_engine.exe \<input file name\>".
 
 ## NFA input file validation + word acceptance
 
