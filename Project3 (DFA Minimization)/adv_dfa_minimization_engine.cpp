@@ -13,7 +13,7 @@ int main(int argc, char * argv[]){
     int x = verif_AFD(nume);
     switch(x){
         case 0:
-            cout<<"AFD valid\n";
+            cout << "AFD valid\n";
             break;
         case 1:
             cout << "Bad filename '" << argv[argc-1] << "'\n";
@@ -22,31 +22,31 @@ int main(int argc, char * argv[]){
             cout << "Nu s-a gasit/introdus corect linia Sigma.\n";
             break;
         case 3:
-            cout<<"Nu s-a gasit/introdus corect linia States.\n";
+            cout << "Nu s-a gasit/introdus corect linia States.\n";
             break;
         case 4:
-            cout<<"Nu s-a gasit/introdus corect linia Transitions.\n";
+            cout << "Nu s-a gasit/introdus corect linia Transitions.\n";
             break;
         case 5:
-            cout <<"Linie invalida in fisier.\n";
+            cout << "Linie invalida in fisier.\n";
             break;
         case 6:
-            cout<<"Sectiunea transition nu contine end\n";
+            cout << "Sectiunea Transitions nu contine END.\n";
             break;
         case 7:
-            cout<<"Sectiunea states nu contine end\n";
+            cout << "Sectiunea States nu contine END.\n";
             break;
         case 8:
-            cout<<"Introduceti Sates si Sigma inainte de Transitions\n";
+            cout << "Introduceti States si Sigma inainte de Transitions.\n";
             break;
         case 9:
-            cout<<"Date incorecte/automat definit gresit\n";
+            cout << "Date incorecte/automat definit gresit.\n";
             break;
         case 10:
-            cout<<"Sectiunea sigma nu contine end\n";
+            cout << "Sectiunea Sigma nu contine END.\n";
             break;
         default:
-            cout<<"Eroare\n";
+            cout << "Eroare.\n";
             break;
     }
     if(x==0) {
@@ -58,17 +58,19 @@ int main(int argc, char * argv[]){
                     ok1 = true;
             }
             if(!ok1)
-                states.erase(states.begin()+ i);
+                states.erase(states.begin() + i);
         }
-        vector<vector<int>>mat_afd_min;
+        vector <vector<int>> mat_afd_min;
         mat_afd_min.resize(states.size());
-        for(int i=0;i<mat_afd_min.size();++i){
+        for(int i = 0; i < mat_afd_min.size(); ++i){
             mat_afd_min[i].resize(states.size());
-            for(int j = 0;j < mat_afd_min[i].size();++j){
-                if(((count(final_states.begin(), final_states.end(), i) != 0 and count(final_states.begin(), final_states.end(), j) == 0)or(count(final_states.begin(), final_states.end(), i) == 0 and count(final_states.begin(), final_states.end(), j) != 0))and i > j)
+            for(int j = 0; j < mat_afd_min[i].size(); ++j){
+                if(((count(final_states.begin(), final_states.end(), i) != 0 and count(final_states.begin(), final_states.end(), j) == 0) or
+                    (count(final_states.begin(), final_states.end(), i) == 0 and count(final_states.begin(), final_states.end(), j) != 0)) and i > j)
                     mat_afd_min[i][j] = 1;
                 else {
-                    if (((find(final_states.begin(), final_states.end(), i) != final_states.end() and find(final_states.begin(), final_states.end(), j) != final_states.end())or(find(final_states.begin(), final_states.end(), i) == final_states.end() and find(final_states.begin(), final_states.end(), j) == final_states.end()))and i > j)
+                    if (((find(final_states.begin(), final_states.end(), i) != final_states.end() and find(final_states.begin(), final_states.end(), j) != final_states.end()) or
+                         (find(final_states.begin(), final_states.end(), i) == final_states.end() and find(final_states.begin(), final_states.end(), j) == final_states.end())) and i > j)
                         mat_afd_min[i][j] = 0;
                     else
                         mat_afd_min[i][j] = -1;
@@ -76,22 +78,22 @@ int main(int argc, char * argv[]){
             }
         }
 
-        vector<vector<unsigned int>>li_adiacenta;
+        vector <vector<unsigned int>> li_adiacenta;
         li_adiacenta.resize(states.size());
-        for(int i=0;i< li_adiacenta.size();++i) {
+        for(int i = 0;i < li_adiacenta.size(); ++i) {
             li_adiacenta[i].resize(alf.size());
             for (int j = 0; j < li_adiacenta[i].size(); ++j) {
                 string litera;
                 litera += alf[j];
                 for (int k = 0; k < matrix[i].size(); ++k)
-                    if (matrix[i][k].find(litera)!=string::npos)
+                    if (matrix[i][k].find(litera) != string::npos)
                         li_adiacenta[i][j] = k;
             }
         }
         bool ok = true;
         while(ok){
             ok = false;
-            for(int i=0;i<mat_afd_min.size();++i) {
+            for(int i = 0; i < mat_afd_min.size(); ++i) {
                 for (int j = 0; j < i; ++j) {
                     if(mat_afd_min[i][j] == 0)
                         for(int k = 0; k < alf.size(); ++k) {
@@ -107,36 +109,27 @@ int main(int argc, char * argv[]){
                 }
             }
         }
-/*
-        for(auto & i : mat_afd_min){
-            for(auto & j : i)
-                if(j == -1)
-                    cout<<"x ";
-                else
-                    cout<<j << " ";
-            cout<<"\n";
-        }
-*/
+
         vector <char> alf_afd_min;
         alf_afd_min = alf;
 
-        vector<set<unsigned long long>> clase;
-        for(int i=0;i<mat_afd_min.size();++i) {
-            set<unsigned long long> s;
+        vector <set<unsigned long long>> clase;
+        for(int i = 0; i < mat_afd_min.size(); ++i) {
+            set <unsigned long long> s;
             s.insert(i);
             for (int j = 0; j < i; ++j)
                 if (mat_afd_min[i][j] == 0) {
                     s.insert(j);
                 }
             bool okset = false;
-            for(auto & k : clase) {
+            for(auto &k : clase) {
                 for (auto &c: s)
                     if (k.find(c) != k.end()) {
                         okset = true;
                         break;
                     }
                 if(okset){
-                    for (auto &c: s)
+                    for (auto &c : s)
                         k.insert(c);
                     break;
                 }
@@ -144,36 +137,18 @@ int main(int argc, char * argv[]){
             if(!okset)
                 clase.push_back(s);
         }
-/*
-        for(auto &xi:clase) {
-            for (auto &i: xi)
-                cout << i << " ";
-            cout<<"\n";
-        }*/
-/*
-        for(int k=0;k<clase.size();++k) {
-            for (int s=k+1;s<clase.size();++s){
-                ok= false;
-                for(auto c:clase[s])
-                if (clase[k].find(c) != clase[k].end())
-                    ok=true;
-                if(ok) {
-                    for (auto &c: clase[s])
-                        clase[k].insert(c);
-                    clase.erase(clase.begin()+s);
-                }
-            }
-        }*/
+
+
 
         long long start_state_afd_min = -1;
         vector <unsigned int> final_states_afd;
         vector <pair<unsigned int, string>> states_afd_min;
-        vector<pair<pair<string, char>,string>> transition_dfa;
+        vector <pair<pair<string, char>,string>> transition_dfa;
         unsigned long long index = states.size();
-        for(auto &k:clase){
+        for(auto &k : clase){
             string denumire;
             bool ok_fin = false;
-            for(auto &f:k) {
+            for(auto &f : k) {
                 if(start_state == f and start_state_afd_min == -1)
                     start_state_afd_min = (long long)index;
                 if(!ok_fin and find(final_states.begin(), final_states.end(), f) != final_states.end()){
@@ -188,16 +163,16 @@ int main(int argc, char * argv[]){
         }
         vector <vector<string>> matrix_min;
         unsigned long long n = states_afd_min.size();
-        matrix_min.resize(n, vector<string>(n, ""));
+        matrix_min.resize(n, vector <string> (n, ""));
         for(auto &st:clase){
-            for(int g = 0;g < alf.size(); ++g){
-                set<unsigned long long> nextst;
-                for(auto &i:st)
+            for(int g = 0; g < alf.size(); ++g){
+                set <unsigned long long> nextst;
+                for(auto &i : st)
                     nextst.insert(li_adiacenta[i][g]);
 
-                for (auto &s: clase)
-                    for(auto &k:s) {
-                        for (auto &h: nextst)
+                for (auto &s : clase)
+                    for(auto &k : s) {
+                        for (auto &h : nextst)
                             if (k == h) {
                                 nextst = s;
                                 break;
@@ -205,7 +180,7 @@ int main(int argc, char * argv[]){
                     }
                 string denumire;
                 bool ok_fin = false;
-                for(auto &f:st) {
+                for(auto &f : st) {
                     if(start_state == f and start_state_afd_min == -1)
                         start_state_afd_min = (long long)index;
                     if(!ok_fin and find(final_states.begin(), final_states.end(), index) != final_states.end()){
@@ -215,9 +190,9 @@ int main(int argc, char * argv[]){
                     denumire += "q" + to_string(f);
                     denumire += "-";
                 }
-                denumire = denumire.substr(0,denumire.size()-1);
+                denumire = denumire.substr(0,denumire.size() - 1);
                 string denumire1;
-                for(auto &f:nextst) {
+                for(auto &f : nextst) {
                     if(start_state == f and start_state_afd_min == -1)
                         start_state_afd_min = (long long)index;
                     if(!ok_fin and find(final_states.begin(), final_states.end(), index) != final_states.end()){
@@ -227,15 +202,15 @@ int main(int argc, char * argv[]){
                     denumire1 += "q" + to_string(f);
                     denumire1 += "-";
                 }
-                denumire1 = denumire1.substr(0,denumire1.size()-1);
+                denumire1 = denumire1.substr(0,denumire1.size() - 1);
                 transition_dfa.push_back({{denumire,alf[g]},denumire1});
-                unsigned int poz1,poz2;
-                for(int l=0;l<states_afd_min.size();++l)
+                unsigned int poz1, poz2;
+                for(int l = 0; l < states_afd_min.size(); ++l)
                     if(states_afd_min[l].second == denumire) {
                         poz1 = l;
                         break;
                     }
-                for(int l=0;l<states_afd_min.size();++l)
+                for(int l = 0; l < states_afd_min.size(); ++l)
                     if(states_afd_min[l].second == denumire1) {
                         poz2 = l;
                         break;
@@ -247,14 +222,14 @@ int main(int argc, char * argv[]){
         bool okstop = true;
         while(okstop){
             okstop = false;
-            for(int i=0;i<states_afd_min.size();++i){
+            for(int i = 0; i < states_afd_min.size(); ++i){
                 bool okstare = false;
-                for(int j=0;j<states_afd_min.size();++j)
+                for(int j = 0; j < states_afd_min.size(); ++j)
                     if(!matrix_min[i][j].empty() and i!=j)
                         okstare = true;
 
                 bool ok_nu_intra = false;
-                for(int j=0;j<states_afd_min.size();++j)
+                for(int j = 0; j < states_afd_min.size(); ++j)
                     if(!matrix_min[j][i].empty() and i!=j)
                         ok_nu_intra = true;
                 if(!ok_nu_intra)
@@ -262,8 +237,8 @@ int main(int argc, char * argv[]){
 
                 if (!okstare and states_afd_min[i].first != start_state_afd_min and find(final_states_afd.begin(), final_states_afd.end(), states_afd_min[i].first) == final_states_afd.end()){
                     okstop = true;
-                    for(int l=0;l<transition_dfa.size();++l)
-                        if(transition_dfa[l].first.first == states_afd_min[i].second or transition_dfa[l].second == states_afd_min[i].second and  states_afd_min[i].first != start_state_afd_min) {
+                    for(int l = 0; l < transition_dfa.size(); ++l)
+                        if(transition_dfa[l].first.first == states_afd_min[i].second or transition_dfa[l].second == states_afd_min[i].second and states_afd_min[i].first != start_state_afd_min) {
                             transition_dfa.erase(transition_dfa.begin() + l);
                             l--;
                         }
@@ -272,19 +247,19 @@ int main(int argc, char * argv[]){
             }
         }
 
-        cout<<"Sigma: \n";
+        cout << "Sigma: \n";
         for (auto &i : alf_afd_min){
-            cout<<i<<"\n";
+            cout << i << "\n";
         }
-        cout<<"END\n";
+        cout << "END\n";
 
-        cout<<"States: \n";
+        cout << "States: \n";
         for (auto &i : states_afd_min)
             if(i.first == start_state_afd_min)
-                cout<< i.second << ",S\n";
+                cout << i.second << ",S\n";
             else {
                 bool okst = true;
-                for (auto &st:final_states_afd)
+                for (auto &st : final_states_afd)
                     if(i.first == st) {
                         okst = false;
                         break;
@@ -292,15 +267,15 @@ int main(int argc, char * argv[]){
                 if(okst)
                     cout << i.second << "\n";
                 else
-                    cout<<i.second <<",F\n";
+                    cout << i.second << ",F\n";
             }
-        cout<<"END\n";
+        cout << "END\n";
 
-        cout<<"Transitions: \n";
+        cout << "Transitions: \n";
         for (auto &i : transition_dfa){
-            cout<<i.first.first << "," << i.first.second <<","<<i.second<<"\n";
+            cout << i.first.first << "," << i.first.second << "," << i.second << "\n";
         }
-        cout<<"END\n";
+        cout << "END\n";
     }
     return 0;
 }
