@@ -19,7 +19,7 @@ To run the program, follow these steps:
 4. Use command "dfa_acceptance_engine.exe \<input file name\> \<word to verify\>".
 
 
-# PROJECT 2 (NFA validation & acceptance + NFA to DFA conversion)
+# PROJECT 2 (NFA and ε-NFA validation & acceptance + NFA to DFA conversion)
 
 ## NFA input file validation
 
