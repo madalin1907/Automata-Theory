@@ -53,10 +53,10 @@ RM = "C:\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)"
+CMAKE_SOURCE_DIR = "C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)\cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -82,14 +82,14 @@ clean: CMakeFiles/nfa_parser_engine.dir/clean
 CMakeFiles/nfa_acceptance_engine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\nfa_acceptance_engine.dir\build.make CMakeFiles/nfa_acceptance_engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\nfa_acceptance_engine.dir\build.make CMakeFiles/nfa_acceptance_engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target nfa_acceptance_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target nfa_acceptance_engine"
 .PHONY : CMakeFiles/nfa_acceptance_engine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/nfa_acceptance_engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)\cmake-build-debug\CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)\cmake-build-debug\CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/nfa_acceptance_engine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/nfa_acceptance_engine.dir/rule
 
 # Convenience name for target.
@@ -108,14 +108,14 @@ CMakeFiles/nfa_acceptance_engine.dir/clean:
 CMakeFiles/nfa_parser_engine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\nfa_parser_engine.dir\build.make CMakeFiles/nfa_parser_engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\nfa_parser_engine.dir\build.make CMakeFiles/nfa_parser_engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)\cmake-build-debug\CMakeFiles" --progress-num=3,4 "Built target nfa_parser_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)\cmake-build-debug\CMakeFiles" --progress-num=3,4 "Built target nfa_parser_engine"
 .PHONY : CMakeFiles/nfa_parser_engine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/nfa_parser_engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)\cmake-build-debug\CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)\cmake-build-debug\CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/nfa_parser_engine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Proiectul2.1 (NFA)\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Madalin\Desktop\LFA\Project2.1 (NFA)\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/nfa_parser_engine.dir/rule
 
 # Convenience name for target.

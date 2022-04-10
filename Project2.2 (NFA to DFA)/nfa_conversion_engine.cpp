@@ -141,7 +141,9 @@ int main(int argc, char * argv[]){
                 if(st.second.find(states[vst].second) != string::npos)
                     final_states_dfa.push_back(st.first);
         }
-        vector<vector<string>> matrix_dfa;
+
+
+
         cout << "Sigma: \n";
         for (auto &i : alf_dfa){
             cout << i <<"\n";
@@ -149,22 +151,15 @@ int main(int argc, char * argv[]){
         cout << "END\n";
 
         cout << "States: \n";
-        for (auto &i : states_dfa)
-            if(i.first == start_state_dfa)
-                cout << i.second << ",S\n";
-            else {
-                bool ok = true;
-                for (auto &st : final_states_dfa)
-                        if(i.first == st) {
-                            ok = false;
-                            break;
-                        }
-                if(ok)
-                    cout << i.second << "\n";
-                else
-                    cout << i.second << ",F\n";
-            }
+        for (auto &i : states_dfa) {
+            cout << i.second;
+            if (i.first == start_state_dfa)
+                cout << ",S";
+            if (find(final_states_dfa.begin(), final_states_dfa.end(), i.first) != final_states_dfa.end())
+                cout << ",F";
 
+            cout << "\n";
+        }
         cout << "END\n";
 
         cout<<"Transitions: \n";

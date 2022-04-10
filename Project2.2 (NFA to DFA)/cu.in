@@ -10,7 +10,7 @@ End
 # comment
 #
 States:
-q0,S
+q0,S,f
 q1#fd
 q2,F   #sf
 End

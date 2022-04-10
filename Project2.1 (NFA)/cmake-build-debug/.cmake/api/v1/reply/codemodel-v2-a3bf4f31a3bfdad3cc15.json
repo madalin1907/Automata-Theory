@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tema1",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "nfa_acceptance_engine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nfa_acceptance_engine-Debug-17971fbd7c3a12eebed2.json",
+					"name" : "nfa_acceptance_engine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nfa_parser_engine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nfa_parser_engine-Debug-abfd48861815c37644a7.json",
+					"name" : "nfa_parser_engine",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Madalin/Desktop/LFA/Project2.1 (NFA)/cmake-build-debug",
+		"source" : "C:/Users/Madalin/Desktop/LFA/Project2.1 (NFA)"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

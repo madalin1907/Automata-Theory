@@ -50,6 +50,16 @@ To run the program, follow these steps:
 4. Use command "nfa_conversion_engine.exe \<input file name\>.
 
 
+## Epsilon NFA input file validation + word acceptance
+
+To run the program, follow these steps:
+
+1. Open CMD.
+2. Use *cd* to reach the **Project2.3 (Epsilon NFA)** folder path.
+3. Use command "g++ e_nfa_acceptance_engine.cpp -o e_nfa_acceptance_engine.exe".
+4. Use command "e_nfa_acceptance_engine.exe \<input file name\> \<word to verify\>".
+
+
 # PROJECT 3 (DFA Minimization)
 
 ## Minimization to the smallest DFA with the same level of completeness (Myhill-Nerode theorem)

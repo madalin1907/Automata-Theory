@@ -195,8 +195,10 @@ void citire_alfabet(ifstream &fin) {
 
 
 // completeaza cu valori corespunzatoate vectorul de states
-void completare(const string &state) {
-    if(state.find(',') != string::npos) {
+void completare(const string &state)
+{
+    if(state.find(',') != string::npos)
+    {
         unsigned long long pos = state.find(',');
         string name, is_S_or_F;
         name = state.substr(0,pos);
@@ -208,24 +210,24 @@ void completare(const string &state) {
         transform(is_S_or_F.begin(), is_S_or_F.end(),is_S_or_F.begin(), ::toupper);
         if(is_S_or_F.find('S') != string::npos and start_state == -1)
             start_state = (long long)(states.size() - 1);
-        else {
-            if(is_S_or_F.find('F') != string::npos)
-                final_states.emplace_back(states.size() - 1);
-            else {
-                if(!Check_exista_altelitere(is_S_or_F))
 
-                    if(is_S_or_F.find('S') != string::npos and start_state != -1){
-                        cout << "Automatul are mai multe stari initiale.\n";
-                        exit(-1);
-                    }}
+        else {
+            if (!Check_exista_altelitere(is_S_or_F))
+                if (is_S_or_F.find('S') != string::npos and start_state != -1) {
+                    cout << "Eroare! Automatul are mai multe stari initiale.\n";
+                    exit(-1);
+                }
         }
+        if(is_S_or_F.find('F') != string::npos)
+            final_states.emplace_back(states.size() - 1);
     }
+
     else {
         if(state.find('#') != string::npos){
             unsigned long long poz1, poz2;
             poz1 = state.find(' ');
             poz2 = state.find('#');
-            string stare = state.substr(0,min(poz1,poz2));
+            string stare = state.substr(0,min(poz1, poz2));
             states.emplace_back(states.size(),stare);
         }
         else{
@@ -382,10 +384,10 @@ bool verifica() {
             if(((!matrix[j][i].empty()) and (i != j)) or  i == start_state)
                 ok = true;
             for(auto &x : norepeat)
-                if(matrix[i][j].find(x.first)!= string::npos) {
+                if(matrix[i][j].find(x.first) != string::npos) {
                     if (!x.second) {
                         x.second = true;
-                        ok=true;
+                        ok = true;
                     }
                     else
                         return false;
@@ -403,7 +405,7 @@ bool verifica() {
     for(auto &x:final_states) {
         bool ok = false;
         for(int i = 0; i < states.size(); ++i)
-            if((i != x) and (!matrix[i][x].empty())) {
+            if(((i != x) and (!matrix[i][x].empty())) or i == start_state){
                 ok = true;
                 break;
             }

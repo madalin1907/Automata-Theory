@@ -202,21 +202,15 @@ int main(int argc, char * argv[]){
         cout << "END\n";
 
         cout << "States: \n";
-        for (auto &i : states_afd_min)
-            if(i.first == start_state_afd_min)
-                cout << i.second << ",S\n";
-            else {
-                bool okst = true;
-                for (auto &st : final_states_afd)
-                    if(i.first == st) {
-                        okst = false;
-                        break;
-                    }
-                if(okst)
-                    cout << i.second << "\n";
-                else
-                    cout << i.second << ",F\n";
-            }
+        for (auto &i : states_afd_min) {
+            cout << i.second;
+            if (i.first == start_state_afd_min)
+                cout << ",S";
+            if (find(final_states_afd.begin(), final_states_afd.end(), i.first) != final_states_afd.end())
+                cout << ",F";
+
+            cout << "\n";
+        }
         cout << "END\n";
 
         cout << "Transitions: \n";

@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
             cout << "Sectiunea transition nu contine end.\n";
             break;
         case 7:
-            cout << "Sectiunea states nu contine end.\n";
+            cout << "Sectiunea States nu contine end.\n";
             break;
         case 8:
             cout << "Introduceti States si Sigma inainte de Transitions.\n";
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
             cout << "Date incorecte/automat definit gresit.\n";
             break;
         case 10:
-            cout << "Sectiunea sigma nu contine end.\n";
+            cout << "Sectiunea Sigma nu contine end.\n";
             break;
         default:
             cout << "Eroare.\n";
