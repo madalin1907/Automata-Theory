@@ -36,7 +36,7 @@ To run the program, follow these steps:
 
 1. Open CMD.
 2. Use *cd* to reach the **Project2.1 (NFA)** folder path.
-3. Use command "g++ nfa_acceptance_engine.cpp -o dfa_acceptance_engine.exe".
+3. Use command "g++ nfa_acceptance_engine.cpp -o nfa_acceptance_engine.exe".
 4. Use command "nfa_acceptance_engine.exe \<input file name\> \<word to verify\>".
 
 
