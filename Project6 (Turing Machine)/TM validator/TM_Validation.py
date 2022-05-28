@@ -116,20 +116,20 @@ try:
 
     print()
     if errorCode == 1:
-        print(f"Sectiunea \"states\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"States\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 2:
-        print(f"Sectiunea \"sigma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Sigma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 3:
-        print(f"Sectiunea \"gamma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Gamma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 4:
-        print(f"Sectiunea \"transitions\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Transitions\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 5:
-        print(f"Sectiunea \"start state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Start state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 6:
-        print(f"Sectiunea \"accept state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Accept state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 7:
-        print(f"Sectiunea \"reject state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Reject state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     else:
-        print(f"Fisierul \"{sys.argv[1]}\"este valid!Masina turing acceptata!")
+        print(f"Fisierul \"{sys.argv[1]}\" este valid! Masina turing acceptata!")
 except:
     print("Fișierul solicitat nu există sau altceva a mers prost.")
