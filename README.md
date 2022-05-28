@@ -220,7 +220,6 @@ Reject state:
     q_reject
 End
 ```
-An example of an input file is tm_cofig_file.txt
 
 ## Turing input file validation + word acceptance
 
