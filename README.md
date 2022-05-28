@@ -89,9 +89,9 @@ To run the program, follow these steps:
 
 1. Open CMD.
 2. Use *cd* to reach the **Project5 (CFG)**, then **CFG validator** folder path.
-3. Use command "CFG_validator.py \<input file name\>".
+3. Use command "python CFG_validator.py \<config file name\>".
 
-In our case, the command will be "CFG_validator.py cfg_config_file.txt".
+In our case, the command will be "python CFG_validator.py cfg_config_file.txt".
 
 Format of input file:
 ```
@@ -139,7 +139,7 @@ To run the program, follow these steps:
 
 1. Open CMD.
 2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM validator** folder path.
-3. Use command "python TM_Validation.py \<input file name\>".
+3. Use command "python TM_Validation.py \<config file name\>".
 
 In our case, the command will be "python TM_Validation.py tm_config_file.txt".
 
@@ -227,7 +227,7 @@ To run the program, follow these steps:
 
 1. Open CMD.
 2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM accepting string** folder path.
-3. Use command "python tmAccepting.py \<input file name\> \<input file for string\>".
+3. Use command "python tmAccepting.py \<config file name\> \<input file for string\>".
 
 
 In our case, the command will be "python tmAccepting.py configFile.txt input.txt".
