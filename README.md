@@ -233,12 +233,5 @@ To run the program, follow these steps:
 
 In our case, the command will be "Accept_string_TM.py tm_config_file.txt input_tm.txt".
 
-Our Turing Machine was created for describing the following language:
 
-Given language L1 is {w | w contains an equal number of 0’s and 1’s} over the alphabet {0,1}.
-Let M1 be the Turing machine that decides the language L1. The implementation level description of M1 is as follows:
-M1 -> on w, the input string, we will perform the following steps:
-1. Mark the first unmarked 0 by scanning the tap and mark it. If there are no unmarked 0, go to step 4. Else, move the head back to the front of the tape.
-2. Mark the first unmarked 1 by scanning the tape and mark it. If there is no unmarked 1, then reject.
-3. Place the head back to the front of the tape and repeat step 1.
-4. Place the head back to the front of the tape and check if any unmarked 0’s and 1’s remain by scanning the tape. If there are none, accept else it is unacceptable.
+**Our Turing Machine was created for describing the language L1 = {w | w contains 2<sup>n</sup> 0’s, n >= 0} over the alphabet {0}.**

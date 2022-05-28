@@ -116,26 +116,26 @@ try:
 
     print()
     if errorCode == 1:
-        print(f"Sectiunea \"states\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"States\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 2:
-        print(f"Sectiunea \"sigma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Sigma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 3:
-        print(f"Sectiunea \"gamma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Gamma\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 4:
-        print(f"Sectiunea \"transitions\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Transitions\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 5:
-        print(f"Sectiunea \"start state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Start state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 6:
-        print(f"Sectiunea \"accept state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Accept state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     elif errorCode == 7:
-        print(f"Sectiunea \"reject state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
+        print(f"Sectiunea \"Reject state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     else:
-        print(f"Fisierul \"{sys.argv[1]}\"este valid!Masina turing acceptata!")
+        print(f"Fisierul \"{sys.argv[1]}\" este valid! Masina Turing acceptata!")
         print()
 
-        inputTM = open("input_tm.txt")
+        inputTM = open(sys.argv[2])
 
-        print("Se valideaza șirul de intrare de la \"input_tm.txt\":")
+        print(f"Se valideaza șirul de intrare de la \"{sys.argv[2]}\":")
         print("----------------------------------")
         for string in inputTM:
             copyString = list(string.rstrip("\n"))
@@ -184,9 +184,9 @@ try:
 
             string = string.strip("\n")
             if flag != 3:
-                print(f"Sirul \"{string}\" din \"input_tm.txt\" nu este acceptat de masina.")
+                print(f"Sirul \"{string}\" din \"{sys.argv[2]}\" nu este acceptat de masina.")
             else:
-                print(f"Sirul \"{string}\"  din \"input_tm.txt\" este acceptat de masina!")
+                print(f"Sirul \"{string}\"  din \"{sys.argv[2]}\" este acceptat de masina!")
 
             print("----------------------------------")
 
