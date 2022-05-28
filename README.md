@@ -221,7 +221,7 @@ Reject state:
 End
 ```
 
-## Turing input file validation + word acceptance
+## Turing Machine input file validation + word acceptance
 
 To run the program, follow these steps:
 
@@ -233,4 +233,4 @@ To run the program, follow these steps:
 In our case, the command will be "python tmAccepting.py configFile.txt input.txt".
 
 
-**Our Turing Machine was created for describing the language L1 = {w | w contains 2<sup>n</sup> number of 0’s, n >= 0} over the alphabet {0}.**
+**Our Turing Machine was created for describing the language L = {w | w contains 2<sup>n</sup> number of 0’s, n >= 0} over the alphabet {0}.**
