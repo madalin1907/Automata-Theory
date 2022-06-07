@@ -29,20 +29,20 @@ End
 #
 Transitions:
     q1 q2 0 _ R
-    q2 q2 x e R
-    q5 q2 _ e R
-    q5 q5 0 e L
-    q5 q5 x e L
-    q3 q5 _ e L
-    q3 q3 x e R
+    q2 q2 x x R
+    q5 q2 _ _ R
+    q5 q5 0 0 L
+    q5 q5 x x L
+    q3 q5 _ _ L
+    q3 q3 x x R
     q2 q3 0 x R
-    q3 q4 0 e R
+    q3 q4 0 0 R
     q4 q3 0 x R
-    q4 q4 x e R
-    q2 q_accept _ e R
-    q1 q_reject _ e R
-    q1 q_reject x e R
-    q4 q_reject _ e R
+    q4 q4 x x R
+    q2 q_accept _ _ R
+    q1 q_reject _ _ R
+    q1 q_reject x x R
+    q4 q_reject _ _ R
 End
 #
 #   Comment 4

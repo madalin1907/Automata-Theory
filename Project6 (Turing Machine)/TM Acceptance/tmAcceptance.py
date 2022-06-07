@@ -1,63 +1,64 @@
 import sys
 
 
+
 # „getSection”: funcție care returnează liniile unei anumite secțiuni în fișier de intrare
 # este folosit pentru a separa secțiuni (stări, sigma, gamma, tranziții, stare de pornire, stare de acceptare, stare de respingere)
-def getSection(name, lGen):
+def getSection(name, configLines):
     flag = False
-    lRet = []
+    section = []
 
-    for line in lGen:
+    for line in configLines:
         if line == name + ":":  # începutul secțiunii
             flag = True
             continue
         if line == "end":  # sfârșitul secțiunii
             flag = False
-        if flag == True and line not in lRet:  # dacă nu am ajuns la sfârșitul secțiunii, anexăm linia fișierui la listă
-            lRet.append(line)
+        if flag == True and line not in section:  # dacă nu am ajuns la sfârșitul secțiunii, anexăm linia fișierui la listă
+            section.append(line)
 
-    return lRet
+    return section
 
 
 # „loadFromFile”: funcție care utilizează funcția „getSection”, pentru a încărca secțiunile unui fișier de configurare TM
-# și returnați-le în liste, împreună cu un cod de eroare dacă fișier nu este valid
+# și le returnează în liste, împreună cu un cod de eroare dacă fișierul nu este valid
 def loadFromFile(fileName):
-    lGen = []
+    configLines = []
     errorCode = 0
 
     file = open(fileName)
 
     for line in file:
         line = line.strip().lower()
-        if len(line) > 0 and line[0] != "#":  # creăm o listă din fișier de intrare numai cu
-            lGen.append(line)                 # rânduri care sunt diferite de comentarii
-                                              # astfel încât să-l putem trece la funcția „getSection”.
+        if len(line) > 0 and line[0] != "#":  # creăm o listă din fișierul de intrare numai cu
+            configLines.append(line)                 # rânduri care sunt diferite de comentarii
+                                              # astfel încât să putem trece la funcția „getSection”.
 
-    states = list(getSection("states", lGen))  # obținerea stărilor TM 
-    sigma = list(getSection("sigma", lGen))  # obținerea alfabetului de intrare al TM
-    gamma = list(getSection("gamma", lGen))  # obținerea alfabetului de bandă al TM
-    transitions = list(getSection("transitions", lGen))  # obținerea tranzițiilor TM
-    startState = list(getSection("start state", lGen))  #obținerea stării de pornire a TM 
-    acceptState = list(getSection("accept state", lGen))  # obținerea stării de acceptare a TM
-    rejectState = list(getSection("reject state", lGen))  # obținerea stării de respingere a TM
+    states = getSection("states", configLines)  # obținerea stărilor TM 
+    sigma = getSection("sigma", configLines)  # obținerea alfabetului de intrare al TM
+    gamma = getSection("gamma", configLines)  # obținerea alfabetului de bandă al TM
+    transitions = getSection("transitions", configLines)  # obținerea tranzițiilor TM
+    startState = getSection("start state", configLines)  #obținerea stării de pornire a TM 
+    acceptState = getSection("accept state", configLines)  # obținerea stării de acceptare a TM
+    rejectState = getSection("reject state", configLines) # obținerea stării de respingere a TM
 
-    # dacă fișier nu conține exact o stare de pornire, returnăm un cod de eroare
+    # dacă fișierul nu conține exact o stare de pornire, returnăm un cod de eroare
     if len(startState) != 1:
         errorCode = 5
         return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
 
-    # dacă fișier nu conține exact o stare de acceptare, returnăm un cod de eroare
+    # dacă fișierul nu conține exact o stare de acceptare, returnăm un cod de eroare
     if len(acceptState) != 1:
         errorCode = 6
         return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
 
-    # dacă fișier nu conține exact o stare de respingere, returnăm un cod de eroare
+    # dacă fișierul nu conține exact o stare de respingere, returnăm un cod de eroare
     if len(rejectState) != 1:
         errorCode = 7
         return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
 
-    # dacă fișier nu conține cel puțin trei stări, inclusiv starea de pornire, starea de acceptare și starea de respingere,
-    #  returnăm un cod de eroare
+    # dacă fișierul nu conține cel puțin trei stări, inclusiv starea de pornire, starea de acceptare și starea de respingere,
+    # returnăm un cod de eroare
 
     if len(states) < 3:
         errorCode = 1
@@ -66,30 +67,30 @@ def loadFromFile(fileName):
         errorCode = 1
         return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
 
-    # dacă fișier conține simbolul gol ("_") în alfabetul de intrare sau dacă alfabetul de intrare
+    # dacă fișierul conține simbolul gol ("_") în alfabetul de intrare sau dacă alfabetul de intrare
     # este gol, returnăm un cod de eroare
     if "_" in sigma or len(sigma) == 0:
         errorCode = 2
         return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
 
-    # dacă fișier nu conține simbolul gol ("_") în alfabetul de bandă sau 
+    # dacă fișierul nu conține simbolul gol ("_") în alfabetul de bandă sau 
     # dacă alfabetul de intrare nu este inclus în alfabetul de bandă sau 
     # dacă alfabetul de bandă este gol, returnăm un cod de eroare
     if "_" not in gamma or len(set(gamma)) != len(set(gamma)|set(sigma)) or len(gamma) == 0:
         errorCode = 3
         return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
 
-    # dacă fișier nu conține nicio tranziție, returnăm un cod de eroare
+    # dacă fișierul nu conține nicio tranziție, returnăm un cod de eroare
     if len(transitions) == 0:
         errorCode = 4
         return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
     else:
         for transition in transitions:
             transition = transition.split()
-            if len(transition) != 5: #dacă o tranziție nu conține exact 5 elemente, returnăm un cod de eroare
+            if len(transition) != 5: # dacă o tranziție nu conține exact 5 elemente, returnăm un cod de eroare
                 errorCode = 4
                 return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
-            elif transition[0] not in states or transition[1] not in states:  #dacă primele două elemente ale unei tranziții nu sunt stări din fișier , returnăm un cod de eroare
+            elif transition[0] not in states or transition[1] not in states:  # dacă primele două elemente ale unei tranziții nu sunt stări din fișier , returnăm un cod de eroare
                 errorCode = 4
                 return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
             elif transition[0] == acceptState[0] or transition[0] == rejectState[0]:  # dacă prima stare a unei tranziții este fie starea de acceptare, fie starea de respingere, returnăm un cod de eroare
@@ -107,7 +108,7 @@ def loadFromFile(fileName):
 
     file.close()
 
-    #dacă fișierul de configurare TM este valid, nu returnăm niciun cod de eroare
+    # dacă fișierul de configurare TM este valid, nu returnăm niciun cod de eroare
     return errorCode, states, sigma, gamma, transitions, startState, acceptState, rejectState
 
 
@@ -130,6 +131,62 @@ try:
     elif errorCode == 7:
         print(f"Sectiunea \"Reject state\" din fisierul \"{sys.argv[1]}\" nu este valida.")
     else:
-        print(f"Fisierul \"{sys.argv[1]}\" este valid! Masina turing acceptata!")
+        print(f"Fisierul \"{sys.argv[1]}\" este valid! Masina Turing acceptata!")
+        print()
+
+    inputTM = open(sys.argv[2])
+
+    # este testat fiecare input din fisier
+    for line in inputTM:
+        print("----------------------------------")
+        validInput = True # variabilă care indică dacă input-ul este valid
+
+        # sunt setate cele 3 stări : starea curentă, starea de accept, starea de reject 
+        currentS = startState[0]
+        acceptS = acceptState[0]
+        rejectS = rejectState[0]
+
+        # tranzitiile sunt transformate din string-uri in array-uri folosind split
+        newTransitions = [transition.split() for transition in transitions]
+
+        # pozitia curentă pe bandă
+        currentPosition = 0
+
+        line = line.strip()
+        line += '_'
+
+        # se creează banda
+        tape = [char for char in line]
+
+        # se execută operații pe bandă cat timp nu se ajunge din una din stările de reject sau accept
+        # sau cat timp nu este aruncată vreo eroare
+        while currentS != acceptS and currentS != rejectS:
+            try:
+                newTransition = [transition for transition in newTransitions if transition[0] == currentS and transition[2] == tape[currentPosition]][0]
+                if newTransition[1] == rejectS:
+                    raise # aruncăm eroare dacă suntem in starea de reject
+            except:
+                print(f'Sirul "{line[0:-1]}" din "{sys.argv[2]}" nu este acceptat de masina!')
+                validInput = False
+                break
+
+            # se setează litera din tranzitie la pozitia curentă pe bandă
+            tape[currentPosition] = newTransition[3]
+
+            # aici sunt definete cele două direcții de miscare pe bandă ( stânga și dreapta )
+            if (newTransition[4] == 'l'):
+                currentPosition -= 1
+            if (newTransition[4] == 'r'):
+                currentPosition += 1
+            currentS = newTransition[1]
+
+        if validInput:
+            print(f'Sirul "{line[0:-1]}" din "{sys.argv[2]}" este acceptat de masina!')
+
+
+    print("----------------------------------")
+
+    inputTM.close()
+
 except:
     print("Fișierul solicitat nu există sau altceva a mers prost.")

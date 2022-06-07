@@ -138,10 +138,10 @@ End
 To run the program, follow these steps:
 
 1. Open CMD.
-2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM validator** folder path.
-3. Use command "python TM_Validation.py \<config file name\>".
+2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM Validation** folder path.
+3. Use command "python tmValidation.py \<config file name\>".
 
-In our case, the command will be "python TM_Validation.py tm_config_file.txt".
+In our case, the command will be "python tmValidation.py configFile.txt".
 
 Format of input file:
 ```
@@ -226,11 +226,11 @@ End
 To run the program, follow these steps:
 
 1. Open CMD.
-2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM accepting string** folder path.
-3. Use command "python tmAccepting.py \<config file name\> \<input file for string\>".
+2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM Acceptance** folder path.
+3. Use command "python tmAcceptance.py \<config file name\> \<input file for string\>".
 
 
-In our case, the command will be "python tmAccepting.py configFile.txt input.txt".
+In our case, the command will be "python tmAcceptance.py configFile.txt input.txt".
 
 
 **Our Turing Machine was created to describe the language L = {w | w contains 2<sup>n</sup> number of 0’s, n >= 0} over the alphabet {0}.**
