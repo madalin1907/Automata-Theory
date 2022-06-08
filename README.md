@@ -108,10 +108,10 @@ To run the program, follow these steps:
 To run the program, follow these steps:
 
 1. Open CMD.
-2. Use *cd* to reach the **Project4 (CFG)**, then **CFG validator** folder path.
-3. Use command "python CFG_validator.py \<config file name\>".
+2. Use *cd* to reach the **Project4 (CFG)**, then **CFG Validation** folder path.
+3. Use command "python cfgValidation.py \<config file name\>".
 
-In our case, the command will be "python CFG_validator.py cfg_config_file.txt".
+In our case, the command will be "python cfgValidation.py configFile.txt".
 
 Format of input file:
 ```

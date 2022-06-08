@@ -109,6 +109,6 @@ try:
     elif errorCode == 4:
         print(f"Sectiunea \"start variable\" din \"{sys.argv[1]}\" nu este valida.")
     else:
-        print(f"The config file \"{sys.argv[1]}\" este valida!")
+        print(f"Fisierul \"{sys.argv[1]}\" este valid!")
 except:
-    print("Fișierul solicitat nu există sau altceva a mers prost.")
+    print("Fisierul solicitat nu există sau altceva a mers prost.")
