@@ -102,13 +102,13 @@ To run the program, follow these steps:
 4. Use command "adv_dfa_minimization_engine.exe \<input file name\>".
 
 
-# Project 5 (CFG)
+# Project 4 (CFG)
 
 ## CFG input file validation 
 To run the program, follow these steps:
 
 1. Open CMD.
-2. Use *cd* to reach the **Project5 (CFG)**, then **CFG validator** folder path.
+2. Use *cd* to reach the **Project4 (CFG)**, then **CFG validator** folder path.
 3. Use command "python CFG_validator.py \<config file name\>".
 
 In our case, the command will be "python CFG_validator.py cfg_config_file.txt".
@@ -151,14 +151,14 @@ End
 ```
 
 
-# Project 6 (Turing Machine)
+# Project 5 (Turing Machine)
 
 ## Turing Machine input file validation 
 
 To run the program, follow these steps:
 
 1. Open CMD.
-2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM Validation** folder path.
+2. Use *cd* to reach the **Project5 (Turing Machine)**, then **TM Validation** folder path.
 3. Use command "python tmValidation.py \<config file name\>".
 
 In our case, the command will be "python tmValidation.py configFile.txt".
@@ -246,7 +246,7 @@ End
 To run the program, follow these steps:
 
 1. Open CMD.
-2. Use *cd* to reach the **Project6 (Turing Machine)**, then **TM Acceptance** folder path.
+2. Use *cd* to reach the **Project5 (Turing Machine)**, then **TM Acceptance** folder path.
 3. Use command "python tmAcceptance.py \<config file name\> \<input file for string\>".
 
 
